@@ -11,7 +11,7 @@ const Grid = ({ data }) => {
                         <th>Tuesday</th>
                         <th>Wednesday</th>
                         <th>Thursday</th>
-                        <th>Firday</th>
+                        <th>Friday</th>
                     </tr>
                 </thead>
                 <tbody>

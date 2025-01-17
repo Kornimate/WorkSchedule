@@ -3,13 +3,19 @@ td, th{
     width: 15vw;
     margin: 5px;
     padding: 5px;
-    text-overflow: ellipsis;
 }
 
 td {
     border: 1px solid black;
     border-radius: 5px;
     font-weight: bold;
+}
+
+th {
+    max-width: 15vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
 }
 
 .bg-gray {
