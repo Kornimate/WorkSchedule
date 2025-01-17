@@ -7,7 +7,9 @@ import DataContainer from "../models/DataContainer";
 
 const Container = () => {
 
-    const [timeTable] = useState(CreateTimeMatrix(DataContainer))
+    const [timeTable] = useState(CreateTimeMatrix(GetCurrentAndNextMonthData(DataContainer)))
+
+    console.log(timeTable)
 
     return (
         <div className="container">

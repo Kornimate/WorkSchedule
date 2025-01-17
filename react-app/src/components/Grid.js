@@ -1,9 +1,6 @@
 import "../styles/Grid.css"
 
 const Grid = (data) => {
-
-    const thisWeek = data.filter(day => data.date)
-
     return (
         <div>
             <table>
@@ -12,7 +9,7 @@ const Grid = (data) => {
                         <tr>
                             {
                                 day.map((hour) => (
-                                    <td className={ hour ? "orange" : "bg-gray"}></td>
+                                    <td className={ hour ? "bg-orange" : "bg-gray"}></td>
                                 ))
                             }
                         </tr>
