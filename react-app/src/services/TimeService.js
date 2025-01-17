@@ -1,3 +1,5 @@
+//Public functions
+
 function CreateTimeMatrix(listOfTimes){
     const firstDayOfWeek = GetFirstDayOfWeek();
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
@@ -25,6 +27,16 @@ function CreateTimeMatrix(listOfTimes){
     return timeMatrix;
 }
 
+function GetCurrentMonthData(timeTable){
+    const dateTime = new Date();
+    const currYear = dateTime.getFullYear();
+    const currMonth = dateTime.getMonth();
+
+    return timeTable[currYear][currMonth]
+}
+
+//Private functions
+
 function GetFirstDayOfWeek() {
     const currentDate = new Date();
     const currentDay = currentDate.getDay();
@@ -38,4 +50,4 @@ function GetLastDayOfWeek(firstDayOfWeek){
     return new Date(currentDate.setDate(diff));
 }
 
-export {CreateTimeMatrix};
+export {CreateTimeMatrix, GetCurrentAndNextMonthData};
