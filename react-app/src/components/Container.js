@@ -9,8 +9,6 @@ const Container = () => {
 
     const [timeTable] = useState(CreateTimeMatrix(GetCurrentAndNextMonthData(DataContainer)))
 
-    console.log(timeTable)
-
     return (
         <div className="container">
             <Grid data={timeTable}/>
