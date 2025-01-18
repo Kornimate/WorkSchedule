@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/WorkSchedule/static/css/main.21119319.css",
+    "main.css": "/WorkSchedule/static/css/main.8a0a7fe1.css",
     "main.js": "/WorkSchedule/static/js/main.080b99f4.js",
     "static/media/rf-logo.png": "/WorkSchedule/static/media/rf-logo.334922ed184d9b8fe6ec.png",
     "index.html": "/WorkSchedule/index.html",
-    "main.21119319.css.map": "/WorkSchedule/static/css/main.21119319.css.map",
+    "main.8a0a7fe1.css.map": "/WorkSchedule/static/css/main.8a0a7fe1.css.map",
     "main.080b99f4.js.map": "/WorkSchedule/static/js/main.080b99f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.21119319.css",
+    "static/css/main.8a0a7fe1.css",
     "static/js/main.080b99f4.js"
   ]
 }
