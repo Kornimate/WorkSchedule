@@ -1,8 +1,10 @@
 class TimeModel {
-    constructor(dateModel, from, to){
+    constructor(dateModel, from, to, duration=0, comment=""){
         this.date = dateModel.getDate();
         this.from = from;
         this.to = to;
+        this.duration = duration === 0 ? to - from : duration;
+        this.comment = comment;
     }
 }
 

@@ -1,5 +1,7 @@
 //Public functions
 
+import { DateModel, TimeModel } from "../models/TimeModel";
+
 function CreateTimeMatrix(listOfTimes){
     const firstDayOfWeek = GetFirstDayOfWeek();
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
@@ -24,15 +26,12 @@ function CreateTimeMatrix(listOfTimes){
 
     listOfTimes.forEach(time => {
         if((time.date >= firstDayOfWeek && time.date <= lastDayOfWeek) && counter < 6){
-            console.log(time)
             for(let i=time.from;i<=time.to;i++){
                 timeMatrix[i-8][counter] = 1;
             }
             counter++;
         }
     });
-
-    console.log(timeMatrix)
 
     return timeMatrix;
 }
@@ -56,12 +55,15 @@ function GetCurrentAndNextMonthData(timeTable){
     return [...timeTable[currYear][currMonth+1], ...timeTable[nextInLineYear][nextInLineMonth+1]]
 }
 
+function AddSummaryRow(dataList){
+    dataList.sort((a,b) => a.date - b.date);
+    const hourSum = dataList.reduce((accumulator, currItem) => accumulator + currItem.duration, 0)
+    return [...dataList, new TimeModel(new DateModel(0,0,0),0,0, hourSum, "<-- Sum")]
+}
+
 function GetWeekText(){
     const firstDayOfWeek = GetFirstDayOfWeek();
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek)
-
-    console.log(firstDayOfWeek)
-    console.log(lastDayOfWeek)
 
     return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${firstDayOfWeek.getDate()}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${lastDayOfWeek.getDate()}`
 }
@@ -100,4 +102,4 @@ function GetLastDayOfWeek(firstDayOfWeek){
     return result;
 }
 
-export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText};
+export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText, AddSummaryRow};

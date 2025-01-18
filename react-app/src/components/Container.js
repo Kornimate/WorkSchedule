@@ -11,7 +11,7 @@ const Container = () => {
     const [timeTable] = useState(CreateTimeMatrix(GetCurrentAndNextMonthData(DataContainer)))
 
     return (
-        <div class="d-block">
+        <div className="d-block">
             <WorkPlace />
             <h2>{ GetWeekText() }</h2>
             <div className="container">
