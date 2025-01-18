@@ -16,11 +16,12 @@ const Grid = ({ data }) => {
                 </thead>
                 <tbody>
                     {
-                        data.map(day => (
+                        data.map((day, index) => (
                             <tr>
+                                <td class="bg-gray">{ index + 8 }-{ index + 9 }</td>
                                 {
                                     day?.map((hour) => (
-                                        <td className={ hour && hour < 8 ? "bg-orange" : "bg-gray"}>{hour > 7 ? hour : ""}</td>
+                                        <td className={ hour ? "bg-orange" : "bg-gray"}></td>
                                     ))
                                 }
                             </tr>

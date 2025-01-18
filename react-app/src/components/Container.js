@@ -5,6 +5,7 @@ import { useState } from "react";
 import { CreateTimeMatrix, GetCurrentAndNextMonthData, GetWeekText } from "../services/TimeService";
 import DataContainer from "../models/DataContainer";
 import WorkPlace from "./Workplace";
+import Legend from "./Legend";
 
 const Container = () => {
 
@@ -14,6 +15,7 @@ const Container = () => {
         <div className="d-block">
             <WorkPlace />
             <h2>{ GetWeekText() }</h2>
+            <Legend />
             <div className="container">
                 <Grid data={timeTable}/>
             </div>

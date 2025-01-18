@@ -7,26 +7,26 @@ function CreateTimeMatrix(listOfTimes){
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
 
     const timeMatrix = [
-        [8,0,0,0,0,0],
-        [9,0,0,0,0,0],
-        [10,0,0,0,0,0],
-        [11,0,0,0,0,0],
-        [12,0,0,0,0,0],
-        [13,0,0,0,0,0],
-        [14,0,0,0,0,0],
-        [15,0,0,0,0,0],
-        [16,0,0,0,0,0],
-        [17,0,0,0,0,0],
-        [18,0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
     ]
 
     listOfTimes.sort((a,b) => a.date - b.date);
 
-    let counter = 1;
+    let counter = 0;
 
     listOfTimes.forEach(time => {
         if((time.date >= firstDayOfWeek && time.date <= lastDayOfWeek) && counter < 6){
-            for(let i=time.from;i<=time.to;i++){
+            for(let i=time.from;i<time.to;i++){
                 timeMatrix[i-8][counter] = 1;
             }
             counter++;

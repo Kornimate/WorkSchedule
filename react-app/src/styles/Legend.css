@@ -1,0 +1,25 @@
+.center-div {
+    display: flex;
+    justify-content: center;
+}
+
+.legend-container {
+    display: block;
+    justify-content: center;
+}
+
+.working, .not-working {
+    background-color: orange;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 15vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.not-working {
+    background-color: gray !important;
+    margin-top: 10px !important;
+}
