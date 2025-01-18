@@ -12,7 +12,7 @@ td {
 }
 
 th {
-    max-width: 15vw;
+    max-width: 8vw;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis !important;

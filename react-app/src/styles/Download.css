@@ -1,0 +1,14 @@
+button {
+    background-color: orange;
+    border-radius: 10px;
+    border: 10px solid orange;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    word-wrap: break-word;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+button:hover {
+    opacity: 1;
+}

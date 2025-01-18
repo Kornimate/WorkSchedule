@@ -56,12 +56,29 @@ function GetCurrentAndNextMonthData(timeTable){
     return [...timeTable[currYear][currMonth+1], ...timeTable[nextInLineYear][nextInLineMonth+1]]
 }
 
+function GetWeekText(){
+    const firstDayOfWeek = GetFirstDayOfWeek();
+    const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek)
+
+    console.log(firstDayOfWeek)
+    console.log(lastDayOfWeek)
+
+    return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${firstDayOfWeek.getDate()}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${lastDayOfWeek.getDate()}`
+}
+
 //Private functions
 
 function GetFirstDayOfWeek() {
     const currentDate = new Date();
     const currentDay = currentDate.getDay();
-    const diff = currentDate.getDate() - currentDay + (currentDay === 0 ? -6 : 1);
+
+    let additiveDaysForCorrectWeek = 0;
+
+    if(currentDay === 0 || currentDay === 6)
+        additiveDaysForCorrectWeek = 7;
+
+    const diff = currentDate.getDate() - currentDay + (currentDay === 0 ? -6 : 1) + additiveDaysForCorrectWeek;
+
     const result = new Date(currentDate.setDate(diff));
 
     result.setHours(0);
@@ -83,4 +100,4 @@ function GetLastDayOfWeek(firstDayOfWeek){
     return result;
 }
 
-export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData};
+export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText};
