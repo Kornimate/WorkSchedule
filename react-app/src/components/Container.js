@@ -6,6 +6,7 @@ import { CreateTimeMatrix, GetCurrentAndNextMonthData, GetWeekText } from "../se
 import DataContainer from "../models/DataContainer";
 import WorkPlace from "./Workplace";
 import Legend from "./Legend";
+import LastUpdated from "./LastUpdated";
 
 const Container = () => {
 
@@ -20,6 +21,7 @@ const Container = () => {
                 <Grid data={timeTable}/>
             </div>
             <Download />
+            <LastUpdated />
         </div>
     )
 }
