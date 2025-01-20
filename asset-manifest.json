@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/WorkSchedule/static/css/main.e1fc61d4.css",
-    "main.js": "/WorkSchedule/static/js/main.ed6f796c.js",
+    "main.css": "/WorkSchedule/static/css/main.a18e5b9b.css",
+    "main.js": "/WorkSchedule/static/js/main.ae1bc938.js",
     "static/media/rf-logo.png": "/WorkSchedule/static/media/rf-logo.334922ed184d9b8fe6ec.png",
     "index.html": "/WorkSchedule/index.html",
-    "main.e1fc61d4.css.map": "/WorkSchedule/static/css/main.e1fc61d4.css.map",
-    "main.ed6f796c.js.map": "/WorkSchedule/static/js/main.ed6f796c.js.map"
+    "main.a18e5b9b.css.map": "/WorkSchedule/static/css/main.a18e5b9b.css.map",
+    "main.ae1bc938.js.map": "/WorkSchedule/static/js/main.ae1bc938.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1fc61d4.css",
-    "static/js/main.ed6f796c.js"
+    "static/css/main.a18e5b9b.css",
+    "static/js/main.ae1bc938.js"
   ]
 }
