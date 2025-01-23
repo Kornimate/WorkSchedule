@@ -12,6 +12,8 @@ const Container = () => {
 
     const [timeTable] = useState(CreateTimeMatrix(GetCurrentAndNextMonthData(DataContainer)))
 
+    console.log(DataContainer)
+
     return (
         <div className="d-block">
             <WorkPlace />

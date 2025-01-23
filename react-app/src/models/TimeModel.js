@@ -16,7 +16,7 @@ class DateModel{
     }
 
     getDate(){
-        return new Date(this.year, this.month, this.day, 12, 0, 0)
+        return new Date(this.year, this.month, this.day + 1, 12, 0, 0)
     }
 }
 
