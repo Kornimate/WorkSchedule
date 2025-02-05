@@ -6,6 +6,8 @@ function CreateTimeMatrix(listOfTimes){
     const firstDayOfWeek = GetFirstDayOfWeek();
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
 
+    CreateTimeList();
+
     const timeMatrix = [
         [0,0,0,0,0],
         [0,0,0,0,0],
@@ -43,6 +45,28 @@ function CreateTimeMatrix(listOfTimes){
     });
 
     return timeMatrix;
+}
+
+function CreateTimeList(listOfTimes){
+    const monthStart = new Date();
+    monthStart.setDate(1);
+    const monthEnd = new Date((new Date()).getFullYear, monthStart.getMonth() + 1, 1);
+
+    let counter = 0;
+
+    let result = [];
+    
+    listOfTimes.forEach(date => {
+        if(date >= monthStart && date <= monthEnd && true){
+
+        }
+    });
+}
+
+function IncrementDay(date){
+    let dateCopy = new Date(date);
+    const incrementedDate = dateCopy.getDate() + 1;
+    return new Date(dateCopy.setDate(incrementedDate));
 }
 
 function CompareIfTimeIsEqual(date1, date2){
@@ -119,16 +143,14 @@ function GetLastDayOfWeek(firstDayOfWeek){
 
 function GetOffsetDayOfWeek(firstDayOfWeek, offset){
     const firstDayCopy = new Date(firstDayOfWeek)
-    const diff = (firstDayCopy).getDate() + offset;
+    const diff = firstDayCopy.getDate() + offset;
     const result = new Date(firstDayCopy.setDate(diff));
 
     result.setHours(12);
     result.setMinutes(0);
     result.setSeconds(0);
 
-    console.log(result)
-
     return result;
 }
 
-export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText, AddSummaryRow};
+export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText, AddSummaryRow, CreateTimeList};

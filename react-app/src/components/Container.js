@@ -1,4 +1,4 @@
-import Grid from "./Grid";
+import WeeklyView from "./WeeklyView";
 import Download from "./Download";
 import "../styles/Container.css";
 import { useState } from "react";
@@ -18,7 +18,7 @@ const Container = () => {
             <h2>{ GetWeekText() }</h2>
             <Legend />
             <div className="container">
-                <Grid data={timeTable}/>
+                <WeeklyView data={timeTable}/>
             </div>
             <Download />
             <LastUpdated />
