@@ -18,7 +18,7 @@ const Grid = ({ data }) => {
                     {
                         data.map((day, index) => (
                             <tr>
-                                <td class="bg-gray">{ index + 8 }-{ index + 9 }</td>
+                                <td className="bg-gray">{ index + 8 }-{ index + 9 }</td>
                                 {
                                     day?.map((hour) => (
                                         <td className={ hour ? "bg-orange" : "bg-gray"}></td>

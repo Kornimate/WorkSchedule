@@ -25,15 +25,30 @@ function CreateTimeMatrix(listOfTimes){
     let counter = 0;
 
     listOfTimes.forEach(time => {
-        if((time.date >= firstDayOfWeek && time.date <= lastDayOfWeek) && counter < 6){
+        if(counter < 5 && time.date >= firstDayOfWeek && time.date <= lastDayOfWeek && CompareIfTimeIsEqual(GetOffsetDayOfWeek(firstDayOfWeek, counter),time.date)){
             for(let i=time.from;i<time.to;i++){
                 timeMatrix[i-8][counter] = 1;
             }
+            
             counter++;
+        } else if (time.date >= firstDayOfWeek && time.date <= lastDayOfWeek){
+            while(!CompareIfTimeIsEqual(GetOffsetDayOfWeek(firstDayOfWeek, counter),time.date)){
+                counter++;
+            }
+
+            for(let i=time.from;i<time.to;i++){
+                timeMatrix[i-8][counter] = 1;
+            }
         }
     });
 
     return timeMatrix;
+}
+
+function CompareIfTimeIsEqual(date1, date2){
+    return date1.getFullYear() === date2.getFullYear()
+        && date1.getMonth() === date2.getMonth()
+        && date1.getDate() === date2.getDate();
 }
 
 function GetCurrentMonthData(timeTable){
@@ -65,7 +80,7 @@ function GetWeekText(){
     const firstDayOfWeek = GetFirstDayOfWeek();
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek)
 
-    return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${firstDayOfWeek.getDate()}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${lastDayOfWeek.getDate()}`
+    return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + firstDayOfWeek.getDate()).slice(-2)}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + lastDayOfWeek.getDate()).slice(-2)}`
 }
 
 //Private functions
@@ -98,6 +113,20 @@ function GetLastDayOfWeek(firstDayOfWeek){
     result.setHours(23);
     result.setMinutes(59);
     result.setSeconds(59);
+
+    return result;
+}
+
+function GetOffsetDayOfWeek(firstDayOfWeek, offset){
+    const firstDayCopy = new Date(firstDayOfWeek)
+    const diff = (firstDayCopy).getDate() + offset;
+    const result = new Date(firstDayCopy.setDate(diff));
+
+    result.setHours(12);
+    result.setMinutes(0);
+    result.setSeconds(0);
+
+    console.log(result)
 
     return result;
 }
