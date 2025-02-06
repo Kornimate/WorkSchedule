@@ -1,4 +1,4 @@
-import { TimeModel, DateModel } from "./TimeModel";
+import { TimeModel, DateModel } from "./ModelClasses";
 
 const DataContainer = {
     2025: {

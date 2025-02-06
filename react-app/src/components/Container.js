@@ -1,25 +1,16 @@
-import WeeklyView from "./WeeklyView";
 import Download from "./Download";
 import "../styles/Container.css";
-import { useState } from "react";
-import { CreateTimeMatrix, GetCurrentAndNextMonthData, GetWeekText } from "../services/TimeService";
-import DataContainer from "../models/DataContainer";
 import WorkPlace from "./Workplace";
 import Legend from "./Legend";
 import LastUpdated from "./LastUpdated";
+import ViewSelector from "./ViewSelector";
 
 const Container = () => {
-
-    const [timeTable] = useState(CreateTimeMatrix(GetCurrentAndNextMonthData(DataContainer)))
-
     return (
         <div className="d-block">
             <WorkPlace />
-            <h2>{ GetWeekText() }</h2>
             <Legend />
-            <div className="container">
-                <WeeklyView data={timeTable}/>
-            </div>
+            <ViewSelector />
             <Download />
             <LastUpdated />
         </div>

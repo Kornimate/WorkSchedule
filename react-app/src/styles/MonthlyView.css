@@ -1,0 +1,5 @@
+@import "WeeklyView.css";
+
+.capital-text::first-letter{
+    text-transform: capitalize;
+}

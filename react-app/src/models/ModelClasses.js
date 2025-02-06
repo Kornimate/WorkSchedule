@@ -20,4 +20,10 @@ class DateModel{
     }
 }
 
-export { TimeModel, DateModel };
+class MonthTimeViewModel{
+    constructor(from, to){
+        this.time = `${from} - ${to}`;
+    }
+}
+
+export { TimeModel, DateModel, MonthTimeViewModel };

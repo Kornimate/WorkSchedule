@@ -1,12 +1,10 @@
 //Public functions
 
-import { DateModel, TimeModel } from "../models/TimeModel";
+import { DateModel, MonthTimeViewModel, TimeModel } from "../models/ModelClasses";
 
 function CreateTimeMatrix(listOfTimes){
     const firstDayOfWeek = GetFirstDayOfWeek();
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
-
-    CreateTimeList();
 
     const timeMatrix = [
         [0,0,0,0,0],
@@ -27,13 +25,7 @@ function CreateTimeMatrix(listOfTimes){
     let counter = 0;
 
     listOfTimes.forEach(time => {
-        if(counter < 5 && time.date >= firstDayOfWeek && time.date <= lastDayOfWeek && CompareIfTimeIsEqual(GetOffsetDayOfWeek(firstDayOfWeek, counter),time.date)){
-            for(let i=time.from;i<time.to;i++){
-                timeMatrix[i-8][counter] = 1;
-            }
-            
-            counter++;
-        } else if (time.date >= firstDayOfWeek && time.date <= lastDayOfWeek){
+        if(counter < 5 && time.date >= firstDayOfWeek && time.date <= lastDayOfWeek){
             while(!CompareIfTimeIsEqual(GetOffsetDayOfWeek(firstDayOfWeek, counter),time.date)){
                 counter++;
             }
@@ -41,6 +33,8 @@ function CreateTimeMatrix(listOfTimes){
             for(let i=time.from;i<time.to;i++){
                 timeMatrix[i-8][counter] = 1;
             }
+
+            counter++;
         }
     });
 
@@ -50,23 +44,29 @@ function CreateTimeMatrix(listOfTimes){
 function CreateTimeList(listOfTimes){
     const monthStart = new Date();
     monthStart.setDate(1);
-    const monthEnd = new Date((new Date()).getFullYear, monthStart.getMonth() + 1, 1);
+    const monthEnd = new Date((new Date()).getFullYear(), monthStart.getMonth() + 1, 0);
+
+    listOfTimes.sort((a,b) => a.date - b.date)
 
     let counter = 0;
 
-    let result = [];
-    
-    listOfTimes.forEach(date => {
-        if(date >= monthStart && date <= monthEnd && true){
+    let result = new Array(monthEnd.getDate());
 
+    result.fill(null)
+    
+    listOfTimes.forEach(time => {
+        if(counter < monthEnd.getDate() && time.date >= monthStart && time.date <= monthEnd){
+            while(!CompareIfTimeIsEqual(GetOffsetDayOfWeek(monthStart, counter), time.date)){
+                counter++;
+            }
+
+            result[counter] = new MonthTimeViewModel(time.from, time.to);
+
+            counter++;
         }
     });
-}
 
-function IncrementDay(date){
-    let dateCopy = new Date(date);
-    const incrementedDate = dateCopy.getDate() + 1;
-    return new Date(dateCopy.setDate(incrementedDate));
+    return result;
 }
 
 function CompareIfTimeIsEqual(date1, date2){
@@ -80,7 +80,11 @@ function GetCurrentMonthData(timeTable){
     const currYear = dateTime.getFullYear();
     const currMonth = dateTime.getMonth();
 
-    return timeTable[currYear][currMonth+1]
+    try{
+        return timeTable[currYear][currMonth+1] ?? [];
+    } catch {
+        return [];
+    }
 }
 
 function GetCurrentAndNextMonthData(timeTable){
@@ -91,7 +95,11 @@ function GetCurrentAndNextMonthData(timeTable){
     const nextInLineMonth = currMonth === 11 ? 0 : currMonth + 1;
     const nextInLineYear = currMonth === 11 ? currYear + 1 : currYear;
 
-    return [...timeTable[currYear][currMonth+1], ...timeTable[nextInLineYear][nextInLineMonth+1]]
+    try{
+        return [...timeTable[currYear][currMonth+1], ...timeTable[nextInLineYear][nextInLineMonth+1]]
+    } catch {
+        return [];
+    }
 }
 
 function AddSummaryRow(dataList){
@@ -106,8 +114,6 @@ function GetWeekText(){
 
     return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + firstDayOfWeek.getDate()).slice(-2)}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + lastDayOfWeek.getDate()).slice(-2)}`
 }
-
-//Private functions
 
 function GetFirstDayOfWeek() {
     const currentDate = new Date();
