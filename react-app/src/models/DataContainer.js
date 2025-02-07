@@ -22,6 +22,7 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,2,3),11,12),
             new TimeModel(new DateModel(2025,2,4),13,17),
             new TimeModel(new DateModel(2025,2,5),13,18),
+            new TimeModel(new DateModel(2025,2,6),9,10),
             new TimeModel(new DateModel(2025,2,7),8,12),
             new TimeModel(new DateModel(2025,2,10),8,13),
             new TimeModel(new DateModel(2025,2,11),8,13),
@@ -35,7 +36,6 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,2,25),8,13),
             new TimeModel(new DateModel(2025,2,26),13,18),
             new TimeModel(new DateModel(2025,2,28),8,12),
-            
         ],
         3: []
     }

@@ -33,8 +33,6 @@ function CreateTimeMatrix(listOfTimes){
             for(let i=time.from;i<time.to;i++){
                 timeMatrix[i-8][counter] = 1;
             }
-
-            counter++;
         }
     });
 
@@ -60,9 +58,11 @@ function CreateTimeList(listOfTimes){
                 counter++;
             }
 
-            result[counter] = new MonthTimeViewModel(time.from, time.to);
-
-            counter++;
+            if(result[counter] === null){
+                result[counter] = new MonthTimeViewModel(time.from, time.to);
+            } else {
+                result[counter].addTime((new MonthTimeViewModel(time.from, time.to)).time)
+            }
         }
     });
 
