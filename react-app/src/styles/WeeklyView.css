@@ -35,7 +35,13 @@ h2 {
     margin-bottom: 50px;
 }
 
-.text-warning{
-    color: orange;
+.text-bordered{
     font-weight: bolder;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.border-outlined{
+    border: 4px solid white !important;
+    border-radius: 5px !important;
 }

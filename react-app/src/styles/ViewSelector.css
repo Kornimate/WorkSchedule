@@ -44,3 +44,8 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
+
+button{
+    font-weight: bold;
+    color: white;
+}
