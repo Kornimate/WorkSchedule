@@ -27,7 +27,7 @@ const WeeklyView = ({ data }) => {
                                 <td className="bg-gray">{ index + 8 }-{ index + 9 }</td>
                                 {
                                     day?.map((hour, index2) => (
-                                        <td title={`${day} ${index + 8}-${index + 9}`} key={`td_${index}_${index2}`} className={`${hour ? "bg-orange" : "bg-gray"} ${date.getHours() === (index + 8) && date.getDay() === (index2 + 1) ? "border-outlined" : ""}`}></td>
+                                        <td title={`${weekDayNames[index2]} ${index + 8}-${index + 9} ${hour ? "Working" : "Not Working"}`} key={`td_${index}_${index2}`} className={`${hour ? "bg-orange" : "bg-gray"} ${date.getHours() === (index + 8) && date.getDay() === (index2 + 1) ? "border-outlined" : ""}`}></td>
                                     ))
                                 }
                             </tr>

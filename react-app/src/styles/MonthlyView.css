@@ -3,3 +3,11 @@
 .capital-text::first-letter{
     text-transform: capitalize;
 }
+
+.two-row-table td:first-child {
+    border-right: 1px solid black;
+}
+
+.two-row-table td:nth-child(2) {
+    border-left: none;
+}
