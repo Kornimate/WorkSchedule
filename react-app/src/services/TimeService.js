@@ -41,8 +41,13 @@ function CreateTimeMatrix(listOfTimes){
 
 function CreateTimeList(listOfTimes){
     const monthStart = new Date();
+    
     monthStart.setDate(1);
-    const monthEnd = new Date((new Date()).getFullYear(), monthStart.getMonth() + 1, 0);
+    monthStart.setHours(0)
+    monthStart.setMinutes(0);
+    monthStart.setSeconds(0);
+    
+    const monthEnd = new Date((new Date()).getFullYear(), monthStart.getMonth() + 1, 0, 23, 59, 59);
 
     listOfTimes.sort((a,b) => a.date - b.date)
 
