@@ -31,14 +31,26 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,2,17),8,13),
             new TimeModel(new DateModel(2025,2,18),8,13),
             new TimeModel(new DateModel(2025,2,19),13,18),
+            new TimeModel(new DateModel(2025,2,20),13,17),
             new TimeModel(new DateModel(2025,2,21),8,12),
             new TimeModel(new DateModel(2025,2,24),8,13),
             new TimeModel(new DateModel(2025,2,25),8,13),
             new TimeModel(new DateModel(2025,2,26),13,18),
+            new TimeModel(new DateModel(2025,2,27),13,17),
             new TimeModel(new DateModel(2025,2,28),8,12),
         ],
-        3: []
-    }
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
+        8: [],
+        9: [],
+        10: [],
+        11: [],
+        12: []
+    },
+    2026: { }
 }
 
 export default DataContainer;
