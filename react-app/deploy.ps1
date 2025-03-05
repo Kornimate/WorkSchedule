@@ -5,4 +5,4 @@ git commit -m "updated time"
 git push
 Write-Host "Update Time changed"
 Write-Host "Starting deploy process..."
-# npm run deploy
+npm run deploy
