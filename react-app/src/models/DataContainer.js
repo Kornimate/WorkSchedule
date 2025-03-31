@@ -57,7 +57,28 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,3,27),8,13), //5
             new TimeModel(new DateModel(2025,3,28),10,16), //6
         ],
-        4: [],
+        4: [
+            new TimeModel(new DateModel(2025,4,2),13,17), //4
+            new TimeModel(new DateModel(2025,4,3),9,13), //4
+            new TimeModel(new DateModel(2025,4,4),13,17), //4
+            new TimeModel(new DateModel(2025,4,8),9,13), //4
+            new TimeModel(new DateModel(2025,4,9),13,17), //4
+            new TimeModel(new DateModel(2025,4,10),8,12), //4
+            new TimeModel(new DateModel(2025,4,11),13,17), //4
+            new TimeModel(new DateModel(2025,4,14),8,12), //4
+            new TimeModel(new DateModel(2025,4,15),9,13), //4
+            new TimeModel(new DateModel(2025,4,16),8,12), //4
+            new TimeModel(new DateModel(2025,4,17),8,12), //4
+            new TimeModel(new DateModel(2025,4,18),8,12), //4
+            new TimeModel(new DateModel(2025,4,21),8,12), //4
+            new TimeModel(new DateModel(2025,4,22),9,13), //4
+            new TimeModel(new DateModel(2025,4,23),13,17), //4
+            new TimeModel(new DateModel(2025,4,24),8,12), //4
+            new TimeModel(new DateModel(2025,4,25),13,17), //4
+            new TimeModel(new DateModel(2025,4,28),8,12), //4
+            new TimeModel(new DateModel(2025,4,29),9,13), //4
+            new TimeModel(new DateModel(2025,4,30),13,17), //4
+        ],
         5: [],
         6: [],
         7: [],
