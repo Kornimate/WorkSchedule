@@ -1,14 +1,21 @@
+import { useEffect, useState } from "react";
 import { GetWeekText } from "../services/TimeService";
 import "../styles/WeeklyView.css"
 
-const WeeklyView = ({ data }) => {
+const WeeklyView = ({ data, offsetInWeeks }) => {
 
     const date = new Date();
     const weekDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
+    const [timeText, setTimeText] = useState(GetWeekText(offsetInWeeks))
+
+    useEffect(() => {
+        setTimeText(GetWeekText(offsetInWeeks))
+    }, [offsetInWeeks])
+
     return (
         <div>
-            <h2>{ GetWeekText() }</h2>
+            <h2>{ timeText }</h2>
             <table>
                 <thead>
                     <tr>

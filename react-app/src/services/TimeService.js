@@ -2,8 +2,8 @@
 
 import { DateModel, MonthTimeViewModel, TimeModel } from "../models/ModelClasses";
 
-function CreateTimeMatrix(listOfTimes){
-    const firstDayOfWeek = GetFirstDayOfWeek();
+function CreateTimeMatrix(listOfTimes, offsetInWeeks=0){
+    const firstDayOfWeek = GetFirstDayOfWeek(offsetInWeeks);
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
 
     const timeMatrix = [
@@ -39,7 +39,7 @@ function CreateTimeMatrix(listOfTimes){
     return timeMatrix;
 }
 
-function CreateTimeList(listOfTimes){
+function CreateTimeList(listOfTimes, offsetInMonths=0){
     const monthStart = new Date();
     
     monthStart.setDate(1);
@@ -80,7 +80,7 @@ function CompareIfTimeIsEqual(date1, date2){
         && date1.getDate() === date2.getDate();
 }
 
-function GetCurrentMonthData(timeTable){
+function GetCurrentMonthData(timeTable, offset=0){
     const dateTime = new Date();
     const currYear = dateTime.getFullYear();
     const currMonth = dateTime.getMonth();
@@ -92,8 +92,11 @@ function GetCurrentMonthData(timeTable){
     }
 }
 
-function GetCurrentAndNextMonthData(timeTable){
-    const dateTime = new Date();
+function GetCurrentAndNextMonthData(timeTable, offsetInWeeks=0){
+    let dateTime = new Date();
+    const offsetDiff = dateTime.getDate() + (offsetInWeeks * 7);
+    dateTime = new Date(dateTime.setDate(offsetDiff));
+
     const currYear = dateTime.getFullYear();
     const currMonth = dateTime.getMonth();
 
@@ -113,15 +116,18 @@ function AddSummaryRow(dataList){
     return [...dataList, new TimeModel(new DateModel(0,0,0),0,0, hourSum, "<-- Sum")]
 }
 
-function GetWeekText(){
-    const firstDayOfWeek = GetFirstDayOfWeek();
+function GetWeekText(offsetInWeeks=0){
+    const firstDayOfWeek = GetFirstDayOfWeek(offsetInWeeks);
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek)
 
     return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + firstDayOfWeek.getDate()).slice(-2)}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + lastDayOfWeek.getDate()).slice(-2)}`
 }
 
-function GetFirstDayOfWeek() {
-    const currentDate = new Date();
+function GetFirstDayOfWeek(offsetInWeeks) {
+    let currentDate = new Date();
+    const offsetDiff = currentDate.getDate() + (offsetInWeeks * 7);
+    currentDate = new Date(currentDate.setDate(offsetDiff));
+    
     const currentDay = currentDate.getDay();
 
     let additiveDaysForCorrectWeek = 0;

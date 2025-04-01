@@ -32,9 +32,11 @@ button:hover {
 
 
 
-.selector.div {
+.buttons-div {
     margin-top: 40px;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .container {
@@ -48,4 +50,14 @@ button:hover {
 button{
     font-weight: bold;
     color: white;
+}
+
+img{
+    height: 20px;
+    margin: 0;
+}
+
+.week-button{
+    padding: 0;
+    border-width: 0;
 }
