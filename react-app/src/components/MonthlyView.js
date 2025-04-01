@@ -1,15 +1,23 @@
+import { useEffect, useState } from "react";
+import { GetMonthText } from "../services/TimeService";
 import "../styles/MonthlyView.css"
 
-const MonthlyView = ({ data }) => {
+const MonthlyView = ({ data, offsetInMonths }) => {
 
     const date = new Date();
+
+    const [monthText, setMonthText] = useState(GetMonthText(offsetInMonths))
+
+    useEffect(() => {
+        setMonthText(GetMonthText(offsetInMonths))
+    }, [offsetInMonths])
 
     return (
         <div>
             <table className="two-row-table">
                 <thead>
                     <tr>
-                        <th className="capital-text" colSpan="2"><h3>{(new Intl.DateTimeFormat('en-us', { month: 'long' })).format(new Date())}</h3></th>
+                        <th className="capital-text" colSpan="2"><h3>{monthText}</h3></th>
                     </tr>
                     <tr>
                         <th>Date</th>

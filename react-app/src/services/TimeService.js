@@ -40,7 +40,9 @@ function CreateTimeMatrix(listOfTimes, offsetInWeeks=0){
 }
 
 function CreateTimeList(listOfTimes, offsetInMonths=0){
-    const monthStart = new Date();
+    let monthStart = new Date();
+    const offsetDiff = monthStart.getMonth() + offsetInMonths;
+    monthStart = new Date(monthStart.setMonth(offsetDiff));
     
     monthStart.setDate(1);
     monthStart.setHours(0)
@@ -80,8 +82,11 @@ function CompareIfTimeIsEqual(date1, date2){
         && date1.getDate() === date2.getDate();
 }
 
-function GetCurrentMonthData(timeTable, offset=0){
-    const dateTime = new Date();
+function GetCurrentMonthData(timeTable, offsetInMonths=0){
+    let dateTime = new Date();
+    const offsetDiff = dateTime.getMonth() + offsetInMonths;
+    dateTime = new Date(dateTime.setMonth(offsetDiff));
+
     const currYear = dateTime.getFullYear();
     const currMonth = dateTime.getMonth();
 
@@ -119,8 +124,16 @@ function AddSummaryRow(dataList){
 function GetWeekText(offsetInWeeks=0){
     const firstDayOfWeek = GetFirstDayOfWeek(offsetInWeeks);
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek)
-
+    
     return `${firstDayOfWeek.getFullYear()}.${("0" + (firstDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + firstDayOfWeek.getDate()).slice(-2)}-${lastDayOfWeek.getFullYear()}.${("0" + (lastDayOfWeek.getMonth() + 1)).slice(-2)}.${("0" + lastDayOfWeek.getDate()).slice(-2)}`
+}
+
+function GetMonthText(offsetInMonths=0){
+    let dateTime = new Date();
+    const offsetDiff = dateTime.getMonth() + offsetInMonths;
+    dateTime = new Date(dateTime.setMonth(offsetDiff));
+
+    return (new Intl.DateTimeFormat('en-us', { year:'numeric', month: 'long' })).format(dateTime)
 }
 
 function GetFirstDayOfWeek(offsetInWeeks) {
@@ -170,4 +183,18 @@ function GetOffsetDayOfWeek(firstDayOfWeek, offset){
     return result;
 }
 
-export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText, AddSummaryRow, CreateTimeList};
+function GetOffsetDateTime(offsetTime=0, isWeeks=false){
+    let dateTime = new Date();
+    
+    if(isWeeks){
+        const offsetDiff = dateTime.getDate() + (offsetTime * 7); //offset in weeks
+        dateTime = new Date(dateTime.setDate(offsetDiff));
+    } else {
+        const offsetDiff = dateTime.getMonth() + offsetTime; //offset in months
+        dateTime = new Date(dateTime.setMonth(offsetDiff));
+    }
+
+    return dateTime
+}
+
+export {CreateTimeMatrix, GetCurrentMonthData, GetCurrentAndNextMonthData, GetWeekText, AddSummaryRow, CreateTimeList, GetMonthText, GetOffsetDateTime};

@@ -1,4 +1,3 @@
-import Download from "./Download";
 import "../styles/Container.css";
 import WorkPlace from "./Workplace";
 import Legend from "./Legend";
@@ -11,7 +10,6 @@ const Container = () => {
             <WorkPlace />
             <Legend />
             <ViewSelector />
-            <Download />
             <LastUpdated />
         </div>
     )

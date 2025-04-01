@@ -3,6 +3,7 @@ import WeeklyView from "./WeeklyView";
 import { useEffect, useState } from "react";
 import { CreateTimeList, CreateTimeMatrix, GetCurrentAndNextMonthData, GetCurrentMonthData } from "../services/TimeService";
 import DataContainer from "../models/DataContainer";
+import Download from "./Download";
 import next from "../assets/upcoming.png"
 import last from "../assets/previous.png"
 import "../styles/ViewSelector.css";
@@ -51,7 +52,7 @@ const ViewSelector = () => {
         <>
         <div className="buttons-div">
             <button className="week-button" onClick={DecrementStateOfTime}><img src={last} alt="last week"/></button>
-            <div className>
+            <div>
                 <button className={isWeeklyViewShown ? "active-button" : "non-active-button"} onClick={SetWeeklyView}>Week</button>
                 <button className={!isWeeklyViewShown ? "active-button" : "non-active-button"} onClick={SetMonthlyView}>Month</button>
             </div>
@@ -59,9 +60,10 @@ const ViewSelector = () => {
         </div>
             <div className="container">
                 {
-                    isWeeklyViewShown ? <WeeklyView data={weekTable} offsetInWeeks={stateOfWeeks}/> : <MonthlyView data={monthTable} />
+                    isWeeklyViewShown ? <WeeklyView data={weekTable} offsetInWeeks={stateOfWeeks}/> : <MonthlyView data={monthTable} offsetInMonths={stateOfMonths}/>
                 }
             </div>
+            <Download offsetInMonths={stateOfMonths} offsetInWeeks={stateOfWeeks} isWeeks={isWeeklyViewShown}/>
         </>
     )
 }   
