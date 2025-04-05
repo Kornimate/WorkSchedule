@@ -20,11 +20,11 @@ const WeeklyView = ({ data, offsetInWeeks }) => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th className={date.getDay() === 1 ? "text-bordered" : ""}>{ weekDayNames[0] }</th>
-                        <th className={date.getDay() === 2 ? "text-bordered" : ""}>{ weekDayNames[1] }</th>
-                        <th className={date.getDay() === 3 ? "text-bordered" : ""}>{ weekDayNames[2] }</th>
-                        <th className={date.getDay() === 4 ? "text-bordered" : ""}>{ weekDayNames[3] }</th>
-                        <th className={date.getDay() === 5 ? "text-bordered" : ""}>{ weekDayNames[4] }</th>
+                        <th className={date.getDay() === 1 && offsetInWeeks === 0 ? "text-bordered" : ""}>{ weekDayNames[0] }</th>
+                        <th className={date.getDay() === 2 && offsetInWeeks === 0 ? "text-bordered" : ""}>{ weekDayNames[1] }</th>
+                        <th className={date.getDay() === 3 && offsetInWeeks === 0 ? "text-bordered" : ""}>{ weekDayNames[2] }</th>
+                        <th className={date.getDay() === 4 && offsetInWeeks === 0 ? "text-bordered" : ""}>{ weekDayNames[3] }</th>
+                        <th className={date.getDay() === 5 && offsetInWeeks === 0 ? "text-bordered" : ""}>{ weekDayNames[4] }</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,7 @@ const WeeklyView = ({ data, offsetInWeeks }) => {
                                 <td className="bg-gray">{ index + 8 }-{ index + 9 }</td>
                                 {
                                     day?.map((hour, index2) => (
-                                        <td title={`${weekDayNames[index2]} ${index + 8}-${index + 9} ${hour ? "Working" : "Not Working"}`} key={`td_${index}_${index2}`} className={`${hour ? "bg-orange" : "bg-gray"} ${date.getHours() === (index + 8) && date.getDay() === (index2 + 1) ? "border-outlined" : ""}`}></td>
+                                        <td title={`${weekDayNames[index2]} ${index + 8}-${index + 9} ${hour ? "Working" : "Not Working"}`} key={`td_${index}_${index2}`} className={`${hour ? "bg-orange" : "bg-gray"} ${date.getHours() === (index + 8) && date.getDay() === (index2 + 1) && offsetInWeeks === 0 ? "border-outlined" : ""}`}></td>
                                     ))
                                 }
                             </tr>

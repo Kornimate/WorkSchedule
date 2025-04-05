@@ -28,8 +28,8 @@ const MonthlyView = ({ data, offsetInMonths }) => {
                     {
                         data.map((day, index) => (
                             <tr key={index}>
-                                <td className={`bg-gray ${date.getDate() === (index+1) ? "border-outlined" : ""}`}>{ index + 1 }.</td>
-                                <td className={`${day ? "bg-orange" : "bg-gray"} ${date.getDate() === (index+1) ? "border-outlined" : ""}`}>{ day?.time }</td>
+                                <td className={`bg-gray ${date.getDate() === (index+1) && offsetInMonths === 0 ? "border-outlined" : ""}`}>{ index + 1 }.</td>
+                                <td className={`${day ? "bg-orange" : "bg-gray"} ${date.getDate() === (index+1) && offsetInMonths === 0 ? "border-outlined" : ""}`}>{ day?.time }</td>
                             </tr>
                         ))
                     }
