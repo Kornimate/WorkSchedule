@@ -71,7 +71,7 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,4,21),8,13), //5
             new TimeModel(new DateModel(2025,4,22),9,13), //4
             new TimeModel(new DateModel(2025,4,23),13,17), //4
-            new TimeModel(new DateModel(2025,4,24),8,12), //4
+            new TimeModel(new DateModel(2025,4,24),9,13), //4
             new TimeModel(new DateModel(2025,4,25),8,12), //4
             new TimeModel(new DateModel(2025,4,28),8,13), //5
             new TimeModel(new DateModel(2025,4,29),9,13), //4
