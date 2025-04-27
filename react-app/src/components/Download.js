@@ -5,10 +5,10 @@ import { GetCurrentMonthData, AddSummaryRow } from "../services/TimeService";
 import { GetOffsetDateTime } from "../services/TimeService";
 import "../styles/Download.css";
 
-const Download = ({ offsetInMonths, offsetInWeeks, isWeeks} ) => {
+const Download = ({ offsetInMonths} ) => {
 
     function DownloadReport(e){
-        const date = isWeeks ? GetOffsetDateTime(offsetInWeeks, isWeeks) : GetOffsetDateTime(offsetInMonths, isWeeks)
+        const date = GetOffsetDateTime(offsetInMonths, false)
         const data = AddSummaryRow(GetCurrentMonthData(DataContainer, offsetInMonths));
         const worksheet = XLSX.utils.json_to_sheet(data);
         

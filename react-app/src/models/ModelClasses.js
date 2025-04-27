@@ -23,6 +23,7 @@ class DateModel{
 class MonthTimeViewModel{
     constructor(from, to){
         this.time = `${from} - ${to}`;
+        this.duration = to - from;
     }
 
     addTime(newTime){

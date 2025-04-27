@@ -63,7 +63,7 @@ const ViewSelector = () => {
                     isWeeklyViewShown ? <WeeklyView data={weekTable} offsetInWeeks={stateOfWeeks}/> : <MonthlyView data={monthTable} offsetInMonths={stateOfMonths}/>
                 }
             </div>
-            <Download offsetInMonths={stateOfMonths} offsetInWeeks={stateOfWeeks} isWeeks={isWeeklyViewShown}/>
+            <Download offsetInMonths={stateOfMonths} />
         </>
     )
 }   

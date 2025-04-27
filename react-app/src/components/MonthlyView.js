@@ -6,11 +6,13 @@ const MonthlyView = ({ data, offsetInMonths }) => {
 
     const date = new Date();
 
+    let sum = 0;
+
     const [monthText, setMonthText] = useState(GetMonthText(offsetInMonths))
 
     useEffect(() => {
         setMonthText(GetMonthText(offsetInMonths))
-    }, [offsetInMonths])
+    }, [offsetInMonths]);
 
     return (
         <div>
@@ -26,12 +28,15 @@ const MonthlyView = ({ data, offsetInMonths }) => {
                 </thead>
                 <tbody>
                     {
-                        data.map((day, index) => (
-                            <tr key={index}>
-                                <td className={`bg-gray ${date.getDate() === (index+1) && offsetInMonths === 0 ? "border-outlined" : ""}`}>{ index + 1 }.</td>
-                                <td className={`${day ? "bg-orange" : "bg-gray"} ${date.getDate() === (index+1) && offsetInMonths === 0 ? "border-outlined" : ""}`}>{ day?.time }</td>
-                            </tr>
-                        ))
+                        data.map((day, index) => {
+                            sum += day?.duration ?? 0;
+                            return (
+                                <tr key={index} title={`--> Working Hours: ${sum}`}>
+                                    <td className={`bg-gray ${date.getDate() === (index+1) && offsetInMonths === 0 ? "border-outlined" : ""}`}>{ index + 1 }.</td>
+                                    <td className={`${day ? "bg-orange" : "bg-gray"} ${date.getDate() === (index+1) && offsetInMonths === 0 ? "border-outlined" : ""}`}>{ day?.time }</td>
+                                </tr>
+                            )
+                        })
                     }
                 </tbody>
             </table>
