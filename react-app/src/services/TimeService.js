@@ -98,9 +98,7 @@ function GetCurrentMonthData(timeTable, offsetInMonths=0){
 }
 
 function GetCurrentAndNextMonthData(timeTable, offsetInWeeks=0){
-    let dateTime = new Date();
-    const offsetDiff = dateTime.getDate() + (offsetInWeeks * 7);
-    dateTime = new Date(dateTime.setDate(offsetDiff));
+    let dateTime = GetFirstDayOfWeek(offsetInWeeks);
 
     const currYear = dateTime.getFullYear();
     const currMonth = dateTime.getMonth();
