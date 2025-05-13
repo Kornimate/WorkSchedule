@@ -86,12 +86,11 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,5,8),8,12), //4
             new TimeModel(new DateModel(2025,5,9),8,12), //4
             new TimeModel(new DateModel(2025,5,12),8,12), //4
-            new TimeModel(new DateModel(2025,5,13),9,13), //4
             new TimeModel(new DateModel(2025,5,14),13,17), //4
             new TimeModel(new DateModel(2025,5,15),8,12), //4
             new TimeModel(new DateModel(2025,5,16),8,12), //4
-            new TimeModel(new DateModel(2025,5,19),8,12), //4
-            new TimeModel(new DateModel(2025,5,20),9,13), //4
+            new TimeModel(new DateModel(2025,5,19),8,14), //6
+            new TimeModel(new DateModel(2025,5,20),9,15), //6
             new TimeModel(new DateModel(2025,5,21),10,14), //4
             new TimeModel(new DateModel(2025,5,22),8,12), //4
             new TimeModel(new DateModel(2025,5,23),8,12), //4
