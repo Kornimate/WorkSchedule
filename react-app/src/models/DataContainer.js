@@ -98,7 +98,24 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,5,27),8,12), //4
             new TimeModel(new DateModel(2025,5,28),10,14), //4
         ],
-        6: [],
+        6: [
+            new TimeModel(new DateModel(2025,6,4),8,16), //8
+            new TimeModel(new DateModel(2025,6,5),8,14), //6
+            new TimeModel(new DateModel(2025,6,6),8,14), //6
+            new TimeModel(new DateModel(2025,6,9),8,12), //4
+            new TimeModel(new DateModel(2025,6,12),8,12), //4
+            new TimeModel(new DateModel(2025,6,13),10,14), //4
+            new TimeModel(new DateModel(2025,6,16),8,12), //4
+            new TimeModel(new DateModel(2025,6,17),8,12), //4
+            new TimeModel(new DateModel(2025,6,18),8,12), //4
+            new TimeModel(new DateModel(2025,6,19),8,12), //4
+            new TimeModel(new DateModel(2025,6,20),8,12), //4
+            new TimeModel(new DateModel(2025,6,23),8,12), //4
+            new TimeModel(new DateModel(2025,6,24),8,12), //4
+            new TimeModel(new DateModel(2025,6,25),8,12), //4
+            new TimeModel(new DateModel(2025,6,26),8,12), //4
+
+        ],
         7: [],
         8: [],
         9: [],
