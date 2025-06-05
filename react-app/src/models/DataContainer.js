@@ -1,4 +1,5 @@
 import { TimeModel, DateModel } from "./ModelClasses";
+import { OfflineWorkingState } from "./StateClasses";
 
 const DataContainer = {
     2025: {
@@ -104,7 +105,7 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,6,6),8,14), //6
             new TimeModel(new DateModel(2025,6,9),8,12), //4
             new TimeModel(new DateModel(2025,6,12),8,12), //4
-            new TimeModel(new DateModel(2025,6,13),10,14), //4
+            new TimeModel(new DateModel(2025,6,13),10,14).setState(new OfflineWorkingState()), //4
             new TimeModel(new DateModel(2025,6,16),8,14), //6
             new TimeModel(new DateModel(2025,6,17),8,12), //4
             new TimeModel(new DateModel(2025,6,18),8,12), //4

@@ -1,10 +1,18 @@
+import { NormalState } from "./StateClasses";
+
 class TimeModel {
-    constructor(dateModel, from, to, duration=0, comment=""){
+    constructor(dateModel, from, to, duration=0, comment="", state=null){
         this.date = dateModel.getDate();
         this.from = from;
         this.to = to;
         this.duration = duration === 0 ? to - from : duration;
         this.comment = comment;
+        this.state = new NormalState();
+    }
+
+    setState(newState){
+        this.state = newState;
+        return this;
     }
 }
 

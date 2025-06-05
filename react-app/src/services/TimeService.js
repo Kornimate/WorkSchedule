@@ -7,17 +7,17 @@ function CreateTimeMatrix(listOfTimes, offsetInWeeks=0){
     const lastDayOfWeek = GetLastDayOfWeek(firstDayOfWeek);
 
     const timeMatrix = [
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
     ]
 
     listOfTimes.sort((a,b) => a.date - b.date);
@@ -31,7 +31,7 @@ function CreateTimeMatrix(listOfTimes, offsetInWeeks=0){
             }
 
             for(let i=time.from;i<time.to;i++){
-                timeMatrix[i-8][counter] = 1;
+                timeMatrix[i-8][counter] = time.state;
             }
         }
     });
