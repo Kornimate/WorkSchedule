@@ -29,13 +29,15 @@ class DateModel{
 }
 
 class MonthTimeViewModel{
-    constructor(from, to){
+    constructor(from, to, state=null){
         this.time = `${from} - ${to}`;
         this.duration = to - from;
+        this.state = state
     }
 
-    addTime(newTime){
-        this.time += (" & " + newTime)
+    addTime(timeViewModel){
+        this.time += (" & " + timeViewModel.time)
+        this.duration += timeViewModel.duration;
     }
 }
 

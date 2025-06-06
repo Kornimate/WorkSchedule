@@ -1,5 +1,9 @@
 @import "WeeklyView.css";
 
+.monthly-container {
+    width: 50vw;
+}
+
 .capital-text::first-letter{
     text-transform: capitalize;
 }

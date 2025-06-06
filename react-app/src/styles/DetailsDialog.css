@@ -1,0 +1,9 @@
+@import "WeeklyView.css";
+
+span {
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    background-color: #282c34;
+    margin-left: 3px;
+}

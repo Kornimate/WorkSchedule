@@ -66,9 +66,9 @@ function CreateTimeList(listOfTimes, offsetInMonths=0){
             }
 
             if(result[counter] === null){
-                result[counter] = new MonthTimeViewModel(time.from, time.to);
+                result[counter] = new MonthTimeViewModel(time.from, time.to, time.state);
             } else {
-                result[counter].addTime((new MonthTimeViewModel(time.from, time.to)).time)
+                result[counter].addTime((new MonthTimeViewModel(time.from, time.to))) //state is not used here
             }
         }
     });

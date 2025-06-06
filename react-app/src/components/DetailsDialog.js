@@ -1,7 +1,7 @@
 import { Typography, Dialog, DialogTitle, DialogContent } from "@mui/material";
-import "../styles/WeeklyView.css"
+import "../styles/DetailsDialog.css"
 
-const DetailsDialog = ({ stateInfo, open, setOpen }) => {
+const DetailsDialog = ({ stateInfo, open, setOpen, extraText="" }) => {
     const handleClose = () => {
     setOpen(false);
   };
@@ -14,9 +14,10 @@ const DetailsDialog = ({ stateInfo, open, setOpen }) => {
           },
         },
       }} >
-      <DialogTitle className={stateInfo ? stateInfo.color : "bg-gray"}>{stateInfo?.shortDescription} {stateInfo?.textRepresentation} {stateInfo?.extraData}</DialogTitle>
+      <DialogTitle sx={{paddingBottom: 5}} className={stateInfo ? stateInfo.color : "bg-gray"}>{stateInfo?.shortDescription} {stateInfo?.textRepresentation} {stateInfo?.extraData}</DialogTitle>
       <DialogContent className={stateInfo ? stateInfo.color : "bg-gray"}>
         <Typography component="p" >{stateInfo?.description}</Typography>
+        <Typography component="p" dangerouslySetInnerHTML={{ __html: extraText }} ></Typography>
       </DialogContent>
     </Dialog>
   );
