@@ -9,7 +9,7 @@
 }
 
 .working, .not-working, .conditionally-working, .offline-working {
-    background-color: orange;
+    background-color: #003d73;
     border-radius: 5px;
     margin-top: 40px;
     margin-bottom: 10px;

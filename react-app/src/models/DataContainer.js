@@ -117,44 +117,24 @@ const DataContainer = {
             new TimeModel(new DateModel(2025,6,26),8,12), //4
 
         ],
-        7: [
-            new TimeModel(new DateModel(2025,7,3),8,16), //8
-            new TimeModel(new DateModel(2025,7,4),8,16), //8
-            new TimeModel(new DateModel(2025,7,7),8,14), //6
-            new TimeModel(new DateModel(2025,7,8),8,12), //4
-            new TimeModel(new DateModel(2025,7,9),8,12), //4
-            new TimeModel(new DateModel(2025,7,10),8,12), //4
-            new TimeModel(new DateModel(2025,7,11),8,14), //6
-            new TimeModel(new DateModel(2025,7,14),8,14), //6
-            new TimeModel(new DateModel(2025,7,23),8,14), //6
-            new TimeModel(new DateModel(2025,7,24),8,12), //4
-            new TimeModel(new DateModel(2025,7,25),8,14), //6
-            new TimeModel(new DateModel(2025,7,28),8,14), //6
-            new TimeModel(new DateModel(2025,7,29),8,12), //4
-            new TimeModel(new DateModel(2025,7,30),8,12), //4
-            new TimeModel(new DateModel(2025,7,31),8,12), //4
+        7: [],
+        8: [],
+        9: [
+            new TimeModel(new DateModel(2025,9,5),12,16), //4
+            new TimeModel(new DateModel(2025,9,7),12,16), //4
+            new TimeModel(new DateModel(2025,9,9),13,17), //4
+            new TimeModel(new DateModel(2025,9,10),12,16), //4
+            new TimeModel(new DateModel(2025,9,18),8,16), //8
+            new TimeModel(new DateModel(2025,9,19),12,16), //4
+            new TimeModel(new DateModel(2025,9,20),12,16), //4
+            new TimeModel(new DateModel(2025,9,23),13,17), //4
+            new TimeModel(new DateModel(2025,9,24),12,16), //4
+            new TimeModel(new DateModel(2025,9,25),8,16), //8
+            new TimeModel(new DateModel(2025,9,26),12,16), //4
+            new TimeModel(new DateModel(2025,9,27),12,16), //4
+            new TimeModel(new DateModel(2025,9,30),13,17), //4
+
         ],
-        8: [
-            new TimeModel(new DateModel(2025,8,1),8,16), //8
-            new TimeModel(new DateModel(2025,8,4),8,14), //6
-            new TimeModel(new DateModel(2025,8,5),8,12), //4
-            new TimeModel(new DateModel(2025,8,6),8,14), //6
-            new TimeModel(new DateModel(2025,8,7),8,12), //4
-            new TimeModel(new DateModel(2025,8,8),8,16), //8
-            new TimeModel(new DateModel(2025,8,11),8,14), //6
-            new TimeModel(new DateModel(2025,8,12),8,14), //6
-            new TimeModel(new DateModel(2025,8,13),10,12).setState(new OfflineWorkingState()), //2
-            new TimeModel(new DateModel(2025,8,14),10,12), //2
-            new TimeModel(new DateModel(2025,8,15),10,12), //2
-            new TimeModel(new DateModel(2025,8,18),10,12), //2
-            new TimeModel(new DateModel(2025,8,19),10,12), //2
-            new TimeModel(new DateModel(2025,8,20),10,12).setState(new OfflineWorkingState()), //2
-            new TimeModel(new DateModel(2025,8,26),12,16), //4
-            new TimeModel(new DateModel(2025,8,27),13,17), //4
-            new TimeModel(new DateModel(2025,8,28),8,16), //8
-            new TimeModel(new DateModel(2025,8,29),13,17), //4
-        ],
-        9: [],
         10: [],
         11: [],
         12: []

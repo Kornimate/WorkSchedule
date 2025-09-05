@@ -10,7 +10,7 @@ class StateBase {
 
 class NormalState extends StateBase {
     constructor(){
-        super("", "bg-orange", "Working", "Normal working, should be able to reach me within the hour.", "🕐")
+        super("", "bg-tile", "Working", "Normal working, should be able to reach me within the hour.", "🕐")
     }
 }
 

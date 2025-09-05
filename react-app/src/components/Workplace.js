@@ -1,4 +1,4 @@
-import logo from "../assets/rf-logo.png";
+import logo from "../assets/au-logo.png";
 import "../styles/WorkPlace.css";
 
 const WorkPlace = () =>{
