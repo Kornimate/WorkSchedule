@@ -1,3 +1,5 @@
+import { wpConfig } from "../config/wpConfig";
+
 class StateBase {
     constructor(textRepresentation, color, shortDescription, description, extraData){
         this.textRepresentation = textRepresentation;
@@ -10,19 +12,19 @@ class StateBase {
 
 class NormalState extends StateBase {
     constructor(){
-        super("", "bg-tile", "Working", "Normal working, should be able to reach me within the hour.", "🕐")
+        super("", wpConfig.primaryColor, "Working", "Normal working, should be able to reach me within the hour.", "🕐")
     }
 }
 
 class ConditionalWorkingState extends StateBase {
     constructor(){
-        super("❓", "bg-yellow", "Conditionally Working", "Conditional working, these hour(s) may be moved later, if not moved until the given day, that will be the working schedule.", "")
+        super("❓", wpConfig.conditionalColor, "Conditionally Working", "Conditional working, these hour(s) may be moved later, if not moved until the given day, that will be the working schedule.", "")
     }
 }
 
 class OfflineWorkingState extends StateBase {
     constructor(){
-        super("🛜🚫", "bg-blue", "Offline Working", "Offline working, you may not be able to reach me duing this time, but I am working.", "")
+        super("🛜🚫", wpConfig.offlineColor, "Offline Working", "Offline working, you may not be able to reach me duing this time, but I am working.", "")
     }
 }
 

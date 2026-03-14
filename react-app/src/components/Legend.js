@@ -1,34 +1,71 @@
 import "../styles/Legend.css";
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
+import { wpConfig } from "../config/wpConfig";
 
 const Legend = () => {
-    return (
-        <div className="center-div">
-                <div className="legend-container">
-                <Accordion sx={{backgroundColor: "#282c34", border: "3px solid white", borderRadius: 3, color: "white"}}>
-                    <AccordionSummary
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                    sx={{
-                        justifyContent: 'center',
-                        '& .MuiAccordionSummary-content': {
-                            justifyContent: 'center',
-                            textAlign: 'center',
-                        }
-                    }}
-                    >
-                        <Typography component="span">Signs</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <div className="working" title="working">Work 🕐</div>
-                        <div className="not-working" title="not-working">No Work ❌</div>
-                        <div className="conditionally-working" title="conditionally-working">Conditional Work ❓</div>
-                        <div className="offline-working" title="offline-working">Offline Work 🛜🚫</div>
-                    </AccordionDetails>
-                </Accordion>
+  return (
+    <div className="center-div">
+      <div className="legend-container">
+        <Accordion
+          sx={{
+            backgroundColor: wpConfig.backgroundColor,
+            border: `3px solid ${wpConfig.borderColor}`,
+            borderRadius: 3,
+            color: wpConfig.textColor,
+          }}
+        >
+          <AccordionSummary
+            aria-controls="panel1-content"
+            id="panel1-header"
+            sx={{
+              justifyContent: "center",
+              "& .MuiAccordionSummary-content": {
+                justifyContent: "center",
+                textAlign: "center",
+              },
+            }}
+          >
+            <Typography component="span">Signs</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div
+              className="working"
+              title="working"
+              style={{ backgroundColor: wpConfig.primaryColor }}
+            >
+              Work 🕐
             </div>
-        </div>
-    )
-}
+            <div
+              className="not-working"
+              title="not-working"
+              style={{ backgroundColor: wpConfig.secondaryColor }}
+            >
+              No Work ❌
+            </div>
+            <div
+              className="conditionally-working"
+              style={{ backgroundColor: wpConfig.conditionalColor }}
+              title="conditionally-working"
+            >
+              Conditional Work ❓
+            </div>
+            <div
+              className="offline-working"
+              title="offline-working"
+              style={{ backgroundColor: wpConfig.offlineColor }}
+            >
+              Offline Work 🛜🚫
+            </div>
+          </AccordionDetails>
+        </Accordion>
+      </div>
+    </div>
+  );
+};
 
 export default Legend;

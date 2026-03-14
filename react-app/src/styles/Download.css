@@ -1,7 +1,7 @@
 button {
-    background-color: #003d73;
     border-radius: 10px;
-    border: 10px solid #003d73;
+    border-width: 10px;
+    border-style: solid;
     padding: 10px 20px;
     margin-bottom: 40px;
     word-wrap: break-word;

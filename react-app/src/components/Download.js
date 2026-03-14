@@ -3,6 +3,7 @@ import DataContainer from "../models/DataContainer";
 import { saveAs } from "file-saver";
 import { GetCurrentMonthData, AddSummaryRow } from "../services/TimeService";
 import { GetOffsetDateTime } from "../services/TimeService";
+import { wpConfig } from "../config/wpConfig";
 import "../styles/Download.css";
 
 const Download = ({ offsetInMonths} ) => {
@@ -30,7 +31,7 @@ const Download = ({ offsetInMonths} ) => {
     }
 
     return (
-        <button onClick={DownloadReport}>
+        <button onClick={DownloadReport} style={{backgroundColor: wpConfig.primaryColor, color: wpConfig.textColor, borderColor: wpConfig.primaryColor}}>
             <h3>Monthly Report</h3>
         </button>
     )

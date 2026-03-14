@@ -9,7 +9,6 @@
 }
 
 .working, .not-working, .conditionally-working, .offline-working {
-    background-color: #003d73;
     border-radius: 5px;
     margin-top: 40px;
     margin-bottom: 10px;
@@ -20,16 +19,13 @@
 }
 
 .not-working {
-    background-color: gray !important;
     margin-top: 10px !important;
 }
 
 .conditionally-working {
-    background-color: peru !important;
     margin-top: 10px !important;
 }
 
 .offline-working {
-    background-color: lightblue !important;
     margin-top: 10px !important;
 }
