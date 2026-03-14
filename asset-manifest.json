@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/WorkSchedule/static/css/main.5b2bdd15.css",
-    "main.js": "/WorkSchedule/static/js/main.b1c8df69.js",
-    "static/media/au-logo.png": "/WorkSchedule/static/media/au-logo.cacacc2de857d8ebbcca.png",
+    "main.css": "/WorkSchedule/static/css/main.094b097e.css",
+    "main.js": "/WorkSchedule/static/js/main.f7137d94.js",
+    "static/media/workplace.png": "/WorkSchedule/static/media/workplace.fab3882d30b83fdb98f0.png",
     "index.html": "/WorkSchedule/index.html",
-    "main.5b2bdd15.css.map": "/WorkSchedule/static/css/main.5b2bdd15.css.map",
-    "main.b1c8df69.js.map": "/WorkSchedule/static/js/main.b1c8df69.js.map"
+    "main.094b097e.css.map": "/WorkSchedule/static/css/main.094b097e.css.map",
+    "main.f7137d94.js.map": "/WorkSchedule/static/js/main.f7137d94.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b2bdd15.css",
-    "static/js/main.b1c8df69.js"
+    "static/css/main.094b097e.css",
+    "static/js/main.f7137d94.js"
   ]
 }
