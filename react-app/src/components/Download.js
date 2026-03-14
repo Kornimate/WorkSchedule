@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx";
 import DataContainer from "../models/DataContainer";
 import { saveAs } from "file-saver";
-import { GetCurrentMonthData, AddSummaryRow } from "../services/TimeService";
+import { GetCurrentMonthExcelData, AddSummaryRow } from "../services/TimeService";
 import { GetOffsetDateTime } from "../services/TimeService";
 import { wpConfig } from "../config/wpConfig";
 import "../styles/Download.css";
@@ -10,7 +10,7 @@ const Download = ({ offsetInMonths} ) => {
 
     function DownloadReport(e){
         const date = GetOffsetDateTime(offsetInMonths, false)
-        const [MonthData, fMonth, sMonth] = GetCurrentMonthData(DataContainer, offsetInMonths);
+        const [MonthData, fMonth, sMonth] = GetCurrentMonthExcelData(DataContainer, offsetInMonths);
         const data = AddSummaryRow(MonthData, fMonth, sMonth);
         const worksheet = XLSX.utils.json_to_sheet(data);
         

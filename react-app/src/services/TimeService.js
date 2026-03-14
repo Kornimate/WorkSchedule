@@ -125,16 +125,34 @@ function GetCurrentMonthData(timeTable, offsetInMonths = 0) {
   const currYear = dateTime.getFullYear();
   const currMonth = dateTime.getMonth();
 
+  try {
+    return timeTable[currYear][currMonth + 1] ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function GetCurrentMonthExcelData(timeTable, offsetInMonths = 0) {
+  let dateTime = new Date();
+  const offsetDiff = dateTime.getMonth() + offsetInMonths;
+  dateTime = new Date(dateTime.setMonth(offsetDiff));
+
+  const currYear = dateTime.getFullYear();
+  const currMonth = dateTime.getMonth();
+
   const prevMonthObject = new Date(dateTime);
   prevMonthObject.setMonth(prevMonthObject.getMonth() - 1);
 
   const fMonth =
     prevMonthObject.getFullYear() +
     "." +
-    `${(prevMonthObject.getMonth() + 1)}`.padStart(2,'0') +
+    `${prevMonthObject.getMonth() + 1}`.padStart(2, "0") +
     ".";
   const sMonth =
-    dateTime.getFullYear() + "." + `${(dateTime.getMonth() + 1)}`.padStart(2,'0') + ".";
+    dateTime.getFullYear() +
+    "." +
+    `${dateTime.getMonth() + 1}`.padStart(2, "0") +
+    ".";
 
   try {
     return [
@@ -273,6 +291,7 @@ function GetOffsetDateTime(offsetTime = 0, isWeeks = false) {
 export {
   CreateTimeMatrix,
   GetCurrentMonthData,
+  GetCurrentMonthExcelData,
   GetCurrentAndNextMonthData,
   GetWeekText,
   AddSummaryRow,
