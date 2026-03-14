@@ -71,17 +71,31 @@ const ViewSelector = () => {
   return (
     <>
       <div className="buttons-div">
-        <button className="week-button" onClick={DecrementStateOfTime}>
+        <button
+          className="week-button"
+          onClick={DecrementStateOfTime}
+          style={{ backgroundColor: wpConfig.primaryColor }}
+        >
           <img src={last} alt="last week" />
         </button>
         <div>
           <button
             style={
               isWeeklyViewShown
-                ? { backgroundColor: wpConfig.primaryColor, borderColor: wpConfig.primaryColor, color: wpConfig.textColor }
-                : { backgroundColor: wpConfig.secondaryColor, borderColor: wpConfig.secondaryColor, color: wpConfig.textColor }
+                ? {
+                    backgroundColor: wpConfig.primaryColor,
+                    borderColor: wpConfig.primaryColor,
+                    color: wpConfig.textColor,
+                  }
+                : {
+                    backgroundColor: wpConfig.secondaryColor,
+                    borderColor: wpConfig.secondaryColor,
+                    color: wpConfig.textColor,
+                  }
             }
-            className={ isWeeklyViewShown ? "active-button" : "non-active-button" }
+            className={
+              isWeeklyViewShown ? "active-button" : "non-active-button"
+            }
             onClick={SetWeeklyView}
           >
             Week
@@ -89,16 +103,30 @@ const ViewSelector = () => {
           <button
             style={
               !isWeeklyViewShown
-                ? { backgroundColor: wpConfig.primaryColor, borderColor: wpConfig.primaryColor, color: wpConfig.textColor }
-                : { backgroundColor: wpConfig.secondaryColor, borderColor: wpConfig.secondaryColor, color: wpConfig.textColor }
+                ? {
+                    backgroundColor: wpConfig.primaryColor,
+                    borderColor: wpConfig.primaryColor,
+                    color: wpConfig.textColor,
+                  }
+                : {
+                    backgroundColor: wpConfig.secondaryColor,
+                    borderColor: wpConfig.secondaryColor,
+                    color: wpConfig.textColor,
+                  }
             }
-            className={ !isWeeklyViewShown ? "active-button" : "non-active-button" }
+            className={
+              !isWeeklyViewShown ? "active-button" : "non-active-button"
+            }
             onClick={SetMonthlyView}
           >
             Month
           </button>
         </div>
-        <button className="week-button" onClick={IncrementStateOfTime}>
+        <button
+          className="week-button"
+          onClick={IncrementStateOfTime}
+          style={{ backgroundColor: wpConfig.primaryColor }}
+        >
           <img src={next} alt="next week" />
         </button>
       </div>

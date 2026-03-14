@@ -10,7 +10,8 @@ const Download = ({ offsetInMonths} ) => {
 
     function DownloadReport(e){
         const date = GetOffsetDateTime(offsetInMonths, false)
-        const data = AddSummaryRow(GetCurrentMonthData(DataContainer, offsetInMonths));
+        const [MonthData, fMonth, sMonth] = GetCurrentMonthData(DataContainer, offsetInMonths);
+        const data = AddSummaryRow(MonthData, fMonth, sMonth);
         const worksheet = XLSX.utils.json_to_sheet(data);
         
         const columnWidths = [
