@@ -27,10 +27,11 @@ const Legend = () => {
               "& .MuiAccordionSummary-content": {
                 justifyContent: "center",
                 textAlign: "center",
+                backgroundColor: wpConfig.backgroundColor
               },
             }}
           >
-            <Typography component="span">Signs</Typography>
+            <Typography component="span" sx={{backgroundColor: wpConfig.backgroundColor}}>Signs</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <div
