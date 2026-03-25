@@ -150,11 +150,10 @@ const DataContainer = {
       new TimeModel(new DateModel(2026, 3, 16), 8, 16), //8
       new TimeModel(new DateModel(2026, 3, 17), 8, 13), //5
       new TimeModel(new DateModel(2026, 3, 19), 14, 17), //3 ---> 40
-      new TimeModel(new DateModel(2026, 3, 24), 14, 19), //5
-      new TimeModel(new DateModel(2026, 3, 25), 13, 16), //3
-      new TimeModel(new DateModel(2026, 3, 27), 8, 10), //2
-      new TimeModel(new DateModel(2026, 3, 30), 8, 16), //8
-      new TimeModel(new DateModel(2026, 3, 31), 8, 10), //2
+      new TimeModel(new DateModel(2026, 3, 25), 13, 17), //4
+      new TimeModel(new DateModel(2026, 3, 26), 8, 12), //4
+      new TimeModel(new DateModel(2026, 3, 27), 8, 12), //4
+      new TimeModel(new DateModel(2026, 3, 28), 10, 12), //2
     ],
     4: [],
     5: [],
