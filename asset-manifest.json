@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/WorkSchedule/static/css/main.730f9f3b.css",
-    "main.js": "/WorkSchedule/static/js/main.b0ad314a.js",
+    "main.js": "/WorkSchedule/static/js/main.b2185c13.js",
     "static/media/workplace.png": "/WorkSchedule/static/media/workplace.fab3882d30b83fdb98f0.png",
     "index.html": "/WorkSchedule/index.html",
     "main.730f9f3b.css.map": "/WorkSchedule/static/css/main.730f9f3b.css.map",
-    "main.b0ad314a.js.map": "/WorkSchedule/static/js/main.b0ad314a.js.map"
+    "main.b2185c13.js.map": "/WorkSchedule/static/js/main.b2185c13.js.map"
   },
   "entrypoints": [
     "static/css/main.730f9f3b.css",
-    "static/js/main.b0ad314a.js"
+    "static/js/main.b2185c13.js"
   ]
 }
