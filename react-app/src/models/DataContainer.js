@@ -178,15 +178,26 @@ const DataContainer = {
       new TimeModel(new DateModel(2026, 5, 8), 8, 13), //5
       new TimeModel(new DateModel(2026, 5, 13), 10, 14), //4
       new TimeModel(new DateModel(2026, 5, 14), 8, 13), //5
-      new TimeModel(new DateModel(2026, 5, 15), 8, 13), //5 --> 56
-      new TimeModel(new DateModel(2026, 5, 20), 10, 14), //4
-      new TimeModel(new DateModel(2026, 5, 21), 8, 13), //5
+      new TimeModel(new DateModel(2026, 5, 15), 14, 15), //1
+      new TimeModel(new DateModel(2026, 5, 19), 10, 14), //4 --> 56
       new TimeModel(new DateModel(2026, 5, 22), 8, 13), //5
       new TimeModel(new DateModel(2026, 5, 27), 10, 14), //4
       new TimeModel(new DateModel(2026, 5, 28), 8, 13), //5
       new TimeModel(new DateModel(2026, 5, 29), 8, 13), //5
     ],
-    6: [],
+    6: [
+      new TimeModel(new DateModel(2026, 6, 3), 8, 12), //4
+      new TimeModel(new DateModel(2026, 6, 4), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 5), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 10), 8, 12), //4
+      new TimeModel(new DateModel(2026, 6, 11), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 12), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 17), 8, 12), //4
+      new TimeModel(new DateModel(2026, 6, 18), 8, 13), //5 --> 56
+      new TimeModel(new DateModel(2026, 6, 24), 8, 13), //4
+      new TimeModel(new DateModel(2026, 6, 25), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 26), 8, 13), //5
+    ],
     7: [],
     8: [],
     9: [],
