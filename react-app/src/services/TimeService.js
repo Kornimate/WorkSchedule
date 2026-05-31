@@ -54,13 +54,14 @@ function CreateTimeMatrix(listOfTimes, offsetInWeeks = 0) {
 
 function CreateTimeList(listOfTimes, offsetInMonths = 0) {
   let monthStart = new Date();
-  const offsetDiff = monthStart.getMonth() + offsetInMonths;
-  monthStart = new Date(monthStart.setMonth(offsetDiff));
 
-  monthStart.setDate(1);
   monthStart.setHours(0);
   monthStart.setMinutes(0);
   monthStart.setSeconds(0);
+  monthStart.setDate(1);
+
+  const offsetDiff = monthStart.getMonth() + offsetInMonths;
+  monthStart = new Date(monthStart.setMonth(offsetDiff));
 
   const monthEnd = new Date(
     new Date().getFullYear(),
@@ -118,22 +119,39 @@ function CompareIfTimeIsEqual(date1, date2) {
 }
 
 function GetCurrentMonthData(timeTable, offsetInMonths = 0) {
-  let dateTime = new Date();
+  let dateTime = new Date()
+
+  dateTime.setHours(0);
+  dateTime.setMinutes(0);
+  dateTime.setSeconds(0);
+  dateTime.setDate(1);
+  
   const offsetDiff = dateTime.getMonth() + offsetInMonths;
   dateTime = new Date(dateTime.setMonth(offsetDiff));
 
   const currYear = dateTime.getFullYear();
   const currMonth = dateTime.getMonth();
 
+
   try {
-    return timeTable[currYear][currMonth + 1] ?? [];
+    const data = timeTable[currYear][currMonth + 1] ?? [];
+    if (data.length == 0)
+      console.log("no data for month " + (currMonth + 1) + " in year " + currYear);
+    return data;
   } catch {
+    console.log("Error while fetching month data");
     return [];
   }
 }
 
 function GetCurrentMonthExcelData(timeTable, offsetInMonths = 0) {
   let dateTime = new Date();
+
+  dateTime.setHours(0);
+  dateTime.setMinutes(0);
+  dateTime.setSeconds(0);
+  dateTime.setDate(1);
+
   const offsetDiff = dateTime.getMonth() + offsetInMonths;
   dateTime = new Date(dateTime.setMonth(offsetDiff));
 
@@ -215,6 +233,12 @@ function GetWeekText(offsetInWeeks = 0) {
 
 function GetMonthText(offsetInMonths = 0) {
   let dateTime = new Date();
+
+  dateTime.setHours(0);
+  dateTime.setMinutes(0);
+  dateTime.setSeconds(0);
+  dateTime.setDate(1);
+
   const offsetDiff = dateTime.getMonth() + offsetInMonths;
   dateTime = new Date(dateTime.setMonth(offsetDiff));
 
@@ -281,6 +305,11 @@ function GetOffsetDateTime(offsetTime = 0, isWeeks = false) {
     const offsetDiff = dateTime.getDate() + offsetTime * 7; //offset in weeks
     dateTime = new Date(dateTime.setDate(offsetDiff));
   } else {
+    dateTime.setHours(0);
+    dateTime.setMinutes(0);
+    dateTime.setSeconds(0);
+    dateTime.setDate(1);
+
     const offsetDiff = dateTime.getMonth() + offsetTime; //offset in months
     dateTime = new Date(dateTime.setMonth(offsetDiff));
   }
