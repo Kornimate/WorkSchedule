@@ -135,7 +135,7 @@ function GetCurrentMonthData(timeTable, offsetInMonths = 0) {
 
   try {
     const data = timeTable[currYear][currMonth + 1] ?? [];
-    if (data.length == 0)
+    if (data.length === 0)
       console.log("no data for month " + (currMonth + 1) + " in year " + currYear);
     return data;
   } catch {
