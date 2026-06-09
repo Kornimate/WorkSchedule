@@ -187,9 +187,9 @@ const DataContainer = {
       new TimeModel(new DateModel(2026, 5, 29), 8, 13), //5
     ],
     6: [
-      new TimeModel(new DateModel(2026, 6, 5), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 5), 8, 14), //6
       new TimeModel(new DateModel(2026, 6, 10), 8, 12), //4
-      new TimeModel(new DateModel(2026, 6, 11), 8, 13), //5
+      new TimeModel(new DateModel(2026, 6, 11), 8, 12), //5
       new TimeModel(new DateModel(2026, 6, 12), 8, 13), //5
       new TimeModel(new DateModel(2026, 6, 16), 8, 12), //4
       new TimeModel(new DateModel(2026, 6, 17), 8, 12), //4
