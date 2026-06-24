@@ -193,7 +193,7 @@ const DataContainer = {
       new TimeModel(new DateModel(2026, 6, 17), 8, 15), //7
       new TimeModel(new DateModel(2026, 6, 18), 8, 16), //8
       new TimeModel(new DateModel(2026, 6, 19), 8, 15), //7 --> 56
-      new TimeModel(new DateModel(2026, 6, 24), 8, 14), //5 -->
+      new TimeModel(new DateModel(2026, 6, 24), 8, 13), //5 -->
       new TimeModel(new DateModel(2026, 6, 25), 8, 11), //3 --> extra already paid 8 hours
     ],
     7: [],
